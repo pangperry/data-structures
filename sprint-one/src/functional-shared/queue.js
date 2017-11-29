@@ -26,15 +26,3 @@ queueMethods.dequeue = function () {
 queueMethods.size = function () { 
   return this.tail - this.head;
 };
-
-// var a = Queue();
-
-// console.log(a);
-// a.enqueue('a');
-// console.log(a);
-// a.enqueue('b');
-
-// console.log(a);
-// a.dequeue();
-
-// console.log(a);
