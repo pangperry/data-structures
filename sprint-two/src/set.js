@@ -7,22 +7,17 @@ var Set = function() {
 var setPrototype = {};
 
 setPrototype.add = function(item) {
-  set._storage[item] = true;
+  this._storage[item] = true;
 };
 
 setPrototype.contains = function(item) {
-  return !!set._storage[item];
+  return !!this._storage[item];
 };
 
 setPrototype.remove = function(item) {
-  delete set._storage[item];
+  delete this._storage[item];
 };
 
 /*
  * Complexity: What is the time complexity of the above functions?
  */
-var set = Set();
-set.add(9);
-set.add(10);
-set.contains(8);
-set.remove(9);
