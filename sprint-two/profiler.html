@@ -1,0 +1,58 @@
+<!doctype html>
+<html land='en'>
+  <head>
+    <title>Profiler</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href='bootstrap/css/bootstrap.css' rel='stylesheet'/>
+    <link href='bootstrap/css/main.css' rel='stylesheet'/>
+    <link href='main.css' rel='stylesheet'/>
+
+    <script src="../lib/jquery/jquery.js"></script>
+    <script src="../lib/underscore/underscore.js"></script>
+    <script src="../sprint-one/src/functional/stack.js"></script>>
+    <script src="../sprint-one/src/functional/queue.js"></script>
+    <script src="../sprint-one/src/functional-shared/stack.js"></script>
+    <script src="../sprint-one/src/functional-shared/queue.js"></script>
+    <script src="../sprint-one/src/prototypal/stack.js"></script>
+    <script src="../sprint-one/src/prototypal/queue.js"></script>
+    <script src="../sprint-one/src/pseudoclassical/queue.js"></script>
+    <script src="../sprint-one/src/pseudoclassical/stack.js"></script>
+    <script src="src/profiler.js"></script>
+    <script src='bootstrap/js/bootstrap.js'></script>
+  </head>
+  <body>
+
+    <div class='container-fluid'>
+
+      <div class='row hidden'>
+        <div class='col-xs-8 col-xs-offset-2 text-center func'>
+          <h2>Functional</h2>
+          <button type="submit" class="btn btn-primary">stacks and queues</button>
+      </div>
+    </div>
+
+    <div class='row hidden'>
+      <div class='col-xs-8 col-xs-offset-2 text-center fShared'>
+        <h2>Functional-shared</h2>
+        <button type="submit" class="btn btn-primary">stacks and queues</button>
+      </div>
+    </div>
+
+    <div class='row hidden'>
+      <div class='col-xs-8 col-xs-offset-2 text-center proto'>
+        <h2>Prototypal</h2>
+        <button type="submit" class="btn btn-primary">stacks and queues</button>
+      </div>
+    </div>
+
+    <div class='row'>
+      <div class='col-xs-8 col-xs-offset-2 text-center pseudo'>
+        <h2>Pseudoclassical</h2>
+        <button type="submit" class="btn btn-primary">stacks and queues</button>
+      </div>
+    </div>
+  </body>
+
+</html>
