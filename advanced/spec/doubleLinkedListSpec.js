@@ -26,10 +26,11 @@ describe('doubleLinkedList', function() {
   it('should remove the head from the list when removeHead is called', function() {
     doubleLinkedList.addToTail(5);
     doubleLinkedList.addToTail(6);
-    doubleLinkedList.removeHead(7);
+    doubleLinkedList.addToTail(7);
+    doubleLinkedList.removeHead();
     expect(doubleLinkedList.head.value).to.equal(6);
     doubleLinkedList.removeHead();
-    expect(doubleLinkedList.head.value).to.equal(5);
+    expect(doubleLinkedList.head.value).to.equal(7);
   });
 
   it('should return the value of the former head when removeHead is called' );

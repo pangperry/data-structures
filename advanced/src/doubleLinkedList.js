@@ -9,12 +9,29 @@ var DoubleLinkedList = function () {
       list.head = node;
       list.tail = node;
     } else {
-      node.next = list.tail;
-      list.tail.previous = node;
+      list.tail.next = node;
+      node.previous = list.tail;
       list.tail = node;
     }
   };
-  list.removeHead = function() {};
+
+  list.removeHead = function() {
+    if (!list.head.next) {
+      list.head = null;
+      list.tail = null;
+    }
+    if (list.head.next) {
+      list.head = list.head.next;
+      list.head.previous = null;
+    } 
+    //if list.head.next 
+      //set list.head.next.previous to null
+      //set list.head to list.head.next
+    //if !list.head.next
+      //set list.head to null
+      //set list.tail to null
+
+  };
   list.contains = function(value) {};
   return list;
 };
