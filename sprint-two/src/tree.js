@@ -1,13 +1,9 @@
 var Tree = function(value) {
   var newTree = {};
   newTree.value = value;
-  //I think this might be cheating
   newTree.parent = null;
   _.extend(newTree, treeMethods);
-
-  // your code here
   newTree.children = [];
-
   return newTree;
 };
 
@@ -23,7 +19,6 @@ treeMethods.contains = function (target) {
   if (this.value === target) {
     return true;
   }
-
   for (var i = 0; i < this.children.length; i++) {
      if (this.children[i].contains(target)) {
        return true;
@@ -33,12 +28,11 @@ treeMethods.contains = function (target) {
   return false;
 };
 
-//figure this out!!:w
-
 treeMethods.removeFromParent = function() {
   var parentNode = this.parent;
   var target = this.value;
   var newTree;
+
   for (var i = 0; i < parentNode.children.length; i++) {
     if (parentNode.children[i].value === target) {
       newTree = parentNode.children.splice(i,1);
@@ -47,6 +41,15 @@ treeMethods.removeFromParent = function() {
   }
 
   return newTree;
+}
+
+treeMethods.traverse = function(cb) {
+  debugger;
+  cb(this);
+
+  for (var i = 0; i < this.children.length; i++) {
+    this.children[i].traverse(cb);
+  }
 }
 
 
