@@ -44,7 +44,6 @@ treeMethods.removeFromParent = function() {
 }
 
 treeMethods.traverse = function(cb) {
-  debugger;
   cb(this);
 
   for (var i = 0; i < this.children.length; i++) {
