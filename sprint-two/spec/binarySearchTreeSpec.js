@@ -45,7 +45,7 @@ describe('binarySearchTree', function() {
     binarySearchTree.insert(2);
     binarySearchTree.insert(3);
     binarySearchTree.insert(7);
-    binarySearchTree.depthFirstLog(func);
+    binarySearchTree.breadthFirstLog(func);
     expect(array).to.eql([5, 2, 7, 3]);
   });
 });

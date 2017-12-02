@@ -57,6 +57,28 @@ BinarySearchTree.Methods.depthFirstLog = function(cb) {
   }
 };
 
+BinarySearchTree.Methods.breadthFirstLog = function(cb, row) { 
+  var row = row || [this];
+  var childrenRow = [];
+
+  for (var i = 0; i < row.length; i++) {
+    cb(row[i].value);
+  }
+  for (var i = 0; i < row.length; i++) {
+    if (row[i].left) {
+      childrenRow.push(row[i].left);
+    }
+    if (row[i].right) {
+      childrenRow.push(row[i].right);
+    }
+  }
+
+  if (childrenRow.length === 0) {
+    return;
+  }
+
+  this.breadthFirstLog(cb, childrenRow);
+}
 /*
  * Complexity: What is the time complexity of the above functions?
  */
