@@ -5,7 +5,7 @@ describe('binarySearchTree', function() {
     binarySearchTree = BinarySearchTree(5);
   });
 
-  it('should have methods named "insert", "contains", and "depthFirstLog, "breadthFirstLog"', function() {
+  it('should have methods named "insert", "contains", and "depthFirstLog, "breadthFirstLog", "rebalance"', function() {
     expect(binarySearchTree.insert).to.be.a('function');
     expect(binarySearchTree.contains).to.be.a('function');
     expect(binarySearchTree.depthFirstLog).to.be.a('function');
@@ -47,5 +47,16 @@ describe('binarySearchTree', function() {
     binarySearchTree.insert(7);
     binarySearchTree.breadthFirstLog(func);
     expect(array).to.eql([5, 2, 7, 3]);
+  });
+
+  it('should rebalance as soon as max depth is twice the minimum depth', function() {
+    var array = [];
+    var func = function(value) { array.push(value); };
+    binarySearchTree.insert(10);
+    binarySearchTree.insert(15);
+    binarySearchTree.insert(20);
+    binarySearchTree.insert(25);
+    binarySearchTree.breadthFirstLog(func);
+    expect(array).to.eql([15, 10, 20, 5, 25]);
   });
 });
