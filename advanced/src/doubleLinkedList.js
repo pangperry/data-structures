@@ -15,24 +15,42 @@ var DoubleLinkedList = function () {
     }
   };
 
-  list.removeHead = function() {
-    if (!list.head.next) {
-      list.head = null;
-      list.tail = null;
-    }
-    if (list.head.next) {
-      list.head = list.head.next;
-      list.head.previous = null;
-    } 
-    //if list.head.next 
-      //set list.head.next.previous to null
-      //set list.head to list.head.next
-    //if !list.head.next
-      //set list.head to null
-      //set list.tail to null
+  list.removeHead = function () {
+    if (list.head.value) {
+      var value = list.head.value;
 
+      if (!list.head.next) {
+        list.head = null;
+        list.tail = null;
+      }
+
+      if (list.head.next) {
+        list.head = list.head.next;
+        list.head.previous = null;
+      }
+      return value;
+    }
   };
-  list.contains = function(value) {};
+
+  list.contains = function (value) {
+    var start = list.head;
+    if (!start) {
+      return false;
+    }
+    if (start.value === true) {
+      return true;
+    }
+
+    while (start) {
+      if (start.value === value) {
+        return true;
+      }
+      start = start.next;
+    }
+
+    return false;
+   };
+  
   return list;
 };
 

@@ -24,21 +24,36 @@ describe('doubleLinkedList', function() {
   });
 
   it('should remove the head from the list when removeHead is called', function() {
+    doubleLinkedList.addToTail(7);
+    doubleLinkedList.addToTail(6);
+    doubleLinkedList.removeHead();
+    expect(doubleLinkedList.head.value).to.equal(6);
+  });
+
+  it('should return the value of the former head when removeHead is called', function() {
+    doubleLinkedList.addToTail(5);
+    doubleLinkedList.addToTail(7);
+    doubleLinkedList.addToTail(9);
+    doubleLinkedList.removeHead();
+    expect(doubleLinkedList.head.value).to.equal(7);
+    
+  });
+
+  it('should contain a value that was added', function() {
+    doubleLinkedList.addToTail(5); 
+    doubleLinkedList.addToTail(6); 
+    doubleLinkedList.addToTail(7); 
+    doubleLinkedList.addToTail(8); 
+    expect(doubleLinkedList.contains(8)).to.equal(true);
+    expect(doubleLinkedList.contains(6)).to.equal(true);
+  });
+
+  it('should contain nodes that are doubly linked', function() {
     doubleLinkedList.addToTail(5);
     doubleLinkedList.addToTail(6);
     doubleLinkedList.addToTail(7);
-    doubleLinkedList.removeHead();
-    expect(doubleLinkedList.head.value).to.equal(6);
-    doubleLinkedList.removeHead();
-    expect(doubleLinkedList.head.value).to.equal(7);
+    var node = doubleLinkedList.head;
+    expect(doubleLinkedList.head).to.equal(node.next.previous);
   });
-
-  it('should return the value of the former head when removeHead is called' );
-
-  it('should contain a value that was added');
-
-  it('should not contain a value that was removed');
-
-  it('should contain nodes with both next and previous properties');
 
 });
